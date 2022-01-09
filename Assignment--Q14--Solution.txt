@@ -1,0 +1,238 @@
+Microsoft Windows [Version 10.0.19041.508]
+(c) 2020 Microsoft Corporation. All rights reserved.
+
+C:\xampp\mysql\bin>select * from mybenefactor
+'select' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\xampp\mysql\bin>show databases;
+'show' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\xampp\mysql\bin>mysql -u root -p -h localhost
+Enter password:
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 275
+Server version: 10.4.14-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> show database;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'database' at line 1
+MariaDB [(none)]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mybenefactor       |
+| mysql              |
+| performance_schema |
+| phpmyadmin         |
+| test               |
++--------------------+
+6 rows in set (0.001 sec)
+
+MariaDB [(none)]> create database student;
+Query OK, 1 row affected (0.037 sec)
+
+MariaDB [(none)]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mybenefactor       |
+| mysql              |
+| performance_schema |
+| phpmyadmin         |
+| student            |
+| test               |
++--------------------+
+7 rows in set (0.001 sec)
+
+MariaDB [(none)]> create database str;
+Query OK, 1 row affected (0.002 sec)
+
+MariaDB [(none)]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mybenefactor       |
+| mysql              |
+| performance_schema |
+| phpmyadmin         |
+| str                |
+| student            |
+| test               |
++--------------------+
+8 rows in set (0.001 sec)
+
+MariaDB [(none)]> drop database str;
+Query OK, 0 rows affected (0.376 sec)
+
+MariaDB [(none)]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mybenefactor       |
+| mysql              |
+| performance_schema |
+| phpmyadmin         |
+| student            |
+| test               |
++--------------------+
+7 rows in set (0.001 sec)
+
+MariaDB [(none)]> use student;
+Database changed
+MariaDB [student]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mybenefactor       |
+| mysql              |
+| performance_schema |
+| phpmyadmin         |
+| student            |
+| test               |
++--------------------+
+7 rows in set (0.002 sec)
+
+MariaDB [student]> use ;
+ERROR: USE must be followed by a database name
+MariaDB [student]> use none;
+ERROR 1049 (42000): Unknown database 'none'
+MariaDB [student]> create table ritecse(
+    -> name varchar(30),
+    -> regdno varchar(10),
+    -> rollno varchar(5),
+    -> std_phno bigint,
+    -> semester varchar(10),
+    -> gender varchar(11),
+    -> fullmark float,
+    -> securemark float,
+    -> cgpa float,
+    -> division varchar(20),
+    -> per_address varchar(50),
+    -> resi_address varchar(50),
+    -> pincode bigint,
+    -> sb_acc_no varchar(20),
+    -> adharno varchar(16) );
+Query OK, 0 rows affected (0.495 sec)
+
+MariaDB [student]> insert into ritecse(
+    ->
+    -> )
+    -> values()
+    -> ;
+Query OK, 1 row affected (0.076 sec)
+
+MariaDB [student]> show tables;
++-------------------+
+| Tables_in_student |
++-------------------+
+| ritecse           |
++-------------------+
+1 row in set (0.001 sec)
+
+MariaDB [student]> desc ritecse;
+ERROR 1036 (HY000): Table 'C:\xampp\tmp\#sql1e7c_113_6.MAI' is read only
+MariaDB [student]> show coloumns from ritecse;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'coloumns from ritecse' at line 1
+MariaDB [student]> show columns from ritecse;
++--------------+-------------+------+-----+---------+-------+
+| Field        | Type        | Null | Key | Default | Extra |
++--------------+-------------+------+-----+---------+-------+
+| name         | varchar(30) | YES  |     | NULL    |       |
+| regdno       | varchar(10) | YES  |     | NULL    |       |
+| rollno       | varchar(5)  | YES  |     | NULL    |       |
+| std_phno     | bigint(20)  | YES  |     | NULL    |       |
+| semester     | varchar(10) | YES  |     | NULL    |       |
+| gender       | varchar(11) | YES  |     | NULL    |       |
+| fullmark     | float       | YES  |     | NULL    |       |
+| securemark   | float       | YES  |     | NULL    |       |
+| cgpa         | float       | YES  |     | NULL    |       |
+| division     | varchar(20) | YES  |     | NULL    |       |
+| per_address  | varchar(50) | YES  |     | NULL    |       |
+| resi_address | varchar(50) | YES  |     | NULL    |       |
+| pincode      | bigint(20)  | YES  |     | NULL    |       |
+| sb_acc_no    | varchar(20) | YES  |     | NULL    |       |
+| adharno      | varchar(16) | YES  |     | NULL    |       |
++--------------+-------------+------+-----+---------+-------+
+15 rows in set (0.007 sec)
+
+MariaDB [student]> desc ritecse;
++--------------+-------------+------+-----+---------+-------+
+| Field        | Type        | Null | Key | Default | Extra |
++--------------+-------------+------+-----+---------+-------+
+| name         | varchar(30) | YES  |     | NULL    |       |
+| regdno       | varchar(10) | YES  |     | NULL    |       |
+| rollno       | varchar(5)  | YES  |     | NULL    |       |
+| std_phno     | bigint(20)  | YES  |     | NULL    |       |
+| semester     | varchar(10) | YES  |     | NULL    |       |
+| gender       | varchar(11) | YES  |     | NULL    |       |
+| fullmark     | float       | YES  |     | NULL    |       |
+| securemark   | float       | YES  |     | NULL    |       |
+| cgpa         | float       | YES  |     | NULL    |       |
+| division     | varchar(20) | YES  |     | NULL    |       |
+| per_address  | varchar(50) | YES  |     | NULL    |       |
+| resi_address | varchar(50) | YES  |     | NULL    |       |
+| pincode      | bigint(20)  | YES  |     | NULL    |       |
+| sb_acc_no    | varchar(20) | YES  |     | NULL    |       |
+| adharno      | varchar(16) | YES  |     | NULL    |       |
++--------------+-------------+------+-----+---------+-------+
+15 rows in set (0.008 sec)
+
+MariaDB [student]> insert into ritecse(name varchar(30),) values();
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'varchar(30),) values()' at line 1
+MariaDB [student]>     -> regdno varchar(10),
+    ->     -> rollno varchar(5),
+    ->     -> std_phno bigint,
+    ->     -> semester varchar(10),
+    ->     -> gender varchar(11),
+    ->     -> fullmark float,
+    ->     -> securemark float,
+    ->     -> cgpa float,
+    ->     -> division varchar(20),
+    ->     -> per_address varchar(50),
+    ->     -> resi_address varchar(50),
+    ->     -> pincode bigint,
+    ->     -> sb_acc_no varchar(20),
+    ->     -> adharno
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '-> regdno varchar(10),
+    -> rollno varchar(5),
+    -> std_phno bigint,
+    ...' at line 1
+MariaDB [student]> insert into ritecse(name,regdno,rollno,std_phno,semester,gender,fullmark,securemark,cgpa,division,per_address) values();
+ERROR 1136 (21S01): Column count doesn't match value count at row 1
+MariaDB [student]> insert into ritecse(name,regdno,rollno,std_phno,semester,gender,fullmark,securemark,cgpa,division,per_address,resi_address,pincode,sb_acc_no,adharno) values('Ajitesh','1801367008','7008',9874561230,'4th','male',100.0,92.8,89.99,'first','A-138,Rourkela','RITE Hostel',769054,'7945648123422541','78945612301234587');
+Query OK, 1 row affected, 1 warning (0.109 sec)
+
+MariaDB [student]> select * from ritecse;
++---------+------------+--------+------------+----------+--------+----------+------------+-------+----------+----------------+--------------+---------+------------------+------------------+
+| name    | regdno     | rollno | std_phno   | semester | gender | fullmark | securemark | cgpa  | division | per_address    | resi_address | pincode | sb_acc_no        | adharno          |
++---------+------------+--------+------------+----------+--------+----------+------------+-------+----------+----------------+--------------+---------+------------------+------------------+
+| NULL    | NULL       | NULL   |       NULL | NULL     | NULL   |     NULL |       NULL |  NULL | NULL     | NULL           | NULL         |    NULL | NULL             | NULL             |
+| Ajitesh | 1801367008 | 7008   | 9874561230 | 4th      | male   |      100 |       92.8 | 89.99 | first    | A-138,Rourkela | RITE Hostel  |  769054 | 7945648123422541 | 7894561230123458 |
++---------+------------+--------+------------+----------+--------+----------+------------+-------+----------+----------------+--------------+---------+------------------+------------------+
+2 rows in set (0.001 sec)
+
+MariaDB [student]> insert into ritecse values('Abhitesh','1901367008','7058',7574561230,'3rd','male',100.0,92.8,94.99,'first','b-138,Rourkela','RITE campus hostel',725854,'254679245222541','5478913245214554587');
+Query OK, 1 row affected, 1 warning (0.065 sec)
+
+MariaDB [student]> select * from ritecse;
++----------+------------+--------+------------+----------+--------+----------+------------+-------+----------+----------------+--------------------+---------+------------------+------------------+
+| name     | regdno     | rollno | std_phno   | semester | gender | fullmark | securemark | cgpa  | division | per_address    | resi_address       | pincode | sb_acc_no        | adharno          |
++----------+------------+--------+------------+----------+--------+----------+------------+-------+----------+----------------+--------------------+---------+------------------+------------------+
+| NULL     | NULL       | NULL   |       NULL | NULL     | NULL   |     NULL |       NULL |  NULL | NULL     | NULL           | NULL               |    NULL | NULL             | NULL             |
+| Ajitesh  | 1801367008 | 7008   | 9874561230 | 4th      | male   |      100 |       92.8 | 89.99 | first    | A-138,Rourkela | RITE Hostel        |  769054 | 7945648123422541 | 7894561230123458 |
+| Abhitesh | 1901367008 | 7058   | 7574561230 | 3rd      | male   |      100 |       92.8 | 94.99 | first    | b-138,Rourkela | RITE campus hostel |  725854 | 254679245222541  | 5478913245214554 |
++----------+------------+--------+------------+----------+--------+----------+------------+-------+----------+----------------+--------------------+---------+------------------+------------------+
+3 rows in set (0.001 sec)
+
+MariaDB [student]>
